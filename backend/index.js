@@ -2,15 +2,16 @@ import express from "express"
 import mongoose from "mongoose"
 import workoutRouter from "./routes/workout.js"
 import cors from 'cors'
-
+import dotenv from "dotenv"
 
 const app = express()
-
+dotenv.config()
 // Allow requests from specific origins
-app.use(cors({
-  origin: 'http://localhost:3000' // Replace with your frontend URL
-}));
-
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Replace with your frontend URL
+  })
+)
 
 //Global Middleware
 app.use((req, res, next) => {
@@ -26,9 +27,7 @@ app.use("/api/workouts", workoutRouter)
 
 //connect to DB
 mongoose
-  .connect(
-    "mongodb+srv://uthayasakthivel8:Uthaya241390@workout-app.3cvv0x1.mongodb.net/?retryWrites=true&w=majority&appName=workout-app"
-  )
+  .connect(`${process.env.MONGODB_URL}`)
   .then(() => {
     //Listening on port
     app.listen(8000, () => {
