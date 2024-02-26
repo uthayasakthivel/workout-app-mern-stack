@@ -6,10 +6,10 @@ import cors from 'cors'
 
 const app = express()
 
-// Enable all CORS requests
-app.use(cors());
-
-// Your other middleware and routes...
+// Allow requests from specific origins
+app.use(cors({
+  origin: 'http://localhost:3000' // Replace with your frontend URL
+}));
 
 
 //Global Middleware
