@@ -1,7 +1,16 @@
 import express from "express"
 import mongoose from "mongoose"
 import workoutRouter from "./routes/workout.js"
+import cors from 'cors'
+
+
 const app = express()
+
+// Enable all CORS requests
+app.use(cors());
+
+// Your other middleware and routes...
+
 
 //Global Middleware
 app.use((req, res, next) => {

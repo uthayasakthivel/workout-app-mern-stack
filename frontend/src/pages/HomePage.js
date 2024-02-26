@@ -8,11 +8,12 @@ function HomePage() {
   const allWorkouts = useSelector((state) => state.workout.workouts)
   console.log(allWorkouts)
   const dispatch = useDispatch()
+  const apiUrl = "http://localhost:8000/api/workouts"
 
   // const [workoutss, setWorkouts] = useState([])
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch("/api/workouts")
+      const response = await fetch(apiUrl)
       const json = await response.json()
       if (response.status === 200) {
         dispatch(getWorkout(json))
