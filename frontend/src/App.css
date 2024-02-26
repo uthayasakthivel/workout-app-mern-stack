@@ -1,0 +1,52 @@
+.wrapper{
+  padding: 2rem;
+}
+
+body {
+  background-color: #d5e5e5;
+}
+
+.navbar-style{
+  background-color: #003636;
+  align-items: center !important;
+}
+
+.card-style{
+  background-color: #00504fd2;
+  color: #f3f3f3;
+}
+
+.navbar-brand{
+  color: #fff !important;
+}
+
+.links{
+  text-decoration: none;
+  color: #fff;
+}
+
+.form-wrapper{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.workout-form{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 60%;
+}
+
+
+
+.workout-form-row{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+}
