@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
 import Row from "react-bootstrap/Row"
 import { useNavigate } from "react-router-dom"
+
 function AddNewWorkout() {
   const [validated, setValidated] = useState(false)
   const [title, setTitle] = useState("")
@@ -11,7 +12,9 @@ function AddNewWorkout() {
   const [reps, setReps] = useState("")
   const navigate = useNavigate()
   const workout = { title, load, reps }
-
+  const isValid = Object.values(workout).every(
+    (value) => typeof value === "string" && value.trim() !== ""
+  )
   const handleSubmit = async (event) => {
     const form = event.currentTarget
     if (form.checkValidity() === false) {
@@ -39,9 +42,10 @@ function AddNewWorkout() {
     }
   }
 
+  const redirectedURL = "/api/workouts"
   useEffect(() => {
-    if (validated) {
-      navigate("/api/workouts/", { replace: true })
+    if (validated && isValid) {
+      navigate(redirectedURL, { replace: true })
     }
   }, [validated])
 

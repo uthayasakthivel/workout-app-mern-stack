@@ -9,7 +9,7 @@ function HomePage() {
   console.log(allWorkouts)
   const dispatch = useDispatch()
   const apiUrl = "http://localhost:8000/api/workouts"
-
+  console.log("render")
   // const [workoutss, setWorkouts] = useState([])
   useEffect(() => {
     const fetchWorkouts = async () => {
