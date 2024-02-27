@@ -8,7 +8,7 @@ function HomePage() {
   const allWorkouts = useSelector((state) => state.workout.workouts)
   console.log(allWorkouts)
   const dispatch = useDispatch()
-  const apiUrl = "http://localhost:8000/api/workouts"
+  const apiUrl = "https://workout-app-mern-stack.vercel.app/api/workouts"
   console.log("render")
   // const [workoutss, setWorkouts] = useState([])
   useEffect(() => {
